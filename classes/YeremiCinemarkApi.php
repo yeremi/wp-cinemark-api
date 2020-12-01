@@ -134,7 +134,7 @@ class YeremiCinemarkApi
                     'theaterUrl'    => trim($_POST['cinemark']['theaterUrl']),
                     'grant_type'    => trim($_POST['cinemark']['grant_type']),
                     'authorization' => trim($_POST['cinemark']['authorization']),
-                    'sandbox'       => $_POST['cinemark']['sandbox'] | 0
+                    'sandbox'       => isset($_POST['cinemark']['sandbox']) ? 1 : 0
                 ];
                 $this->update_option($options);
                 try {
