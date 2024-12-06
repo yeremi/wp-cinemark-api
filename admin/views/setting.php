@@ -69,9 +69,7 @@
             <p>Token gerado: <?php echo $hasToken; ?></p>
             <p>Válido até às:
                 <?php
-                $date = new DateTime();
-                $date->setTimestamp($oauth['expires_in']);
-                echo $date->format("d/m/Y h:m:s");
+                echo date('m/d/Y H:i:s', $oauth['expires_in']);
                 ?>
             </p>
         <?php } ?>
